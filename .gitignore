@@ -1,0 +1,12 @@
+# Local Claude Code state
+.claude/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
