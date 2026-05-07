@@ -26,12 +26,17 @@ body { margin: 0; }
   top: 0;
   z-index: 20;
   display: flex;
+  flex-direction: column;
+  background: var(--f-surface);
+  border-bottom: 1px solid var(--f-hairline);
+}
+
+.topbar-primary {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px clamp(16px, 3vw, 36px);
-  background: var(--f-surface);
-  border-bottom: 1px solid var(--f-hairline);
+  padding: 14px clamp(16px, 3vw, 36px);
 }
 
 .lockup {
@@ -65,10 +70,46 @@ body { margin: 0; }
 .nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .nav a {
+  color: var(--f-ink);
+  font-family: var(--f-mono);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 9px 14px;
+  border: 1px solid transparent;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.nav a:hover {
+  border-color: var(--f-rule);
+}
+
+.nav a[aria-current="page"] {
+  background: var(--f-rule);
+  color: var(--f-ink-inverse);
+  border-color: var(--f-rule);
+}
+
+.topbar-sub {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0 clamp(16px, 3vw, 36px);
+  border-top: 1px solid var(--f-hairline);
+  background: var(--f-surface-subtle);
+  overflow-x: auto;
+}
+
+.topbar-sub a {
+  display: inline-flex;
+  align-items: center;
   color: var(--f-muted);
   font-family: var(--f-mono);
   font-size: 11px;
@@ -76,11 +117,20 @@ body { margin: 0; }
   letter-spacing: 0;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 8px 12px;
-  border-bottom: 1px solid transparent;
+  padding: 11px 14px;
+  border-right: 1px solid var(--f-hairline);
+  white-space: nowrap;
+  transition: background .15s ease, color .15s ease;
 }
 
-.nav a:hover { color: var(--f-ink); border-bottom-color: var(--f-rule); }
+.topbar-sub a:first-child {
+  border-left: 1px solid var(--f-hairline);
+}
+
+.topbar-sub a:hover {
+  color: var(--f-ink);
+  background: var(--f-surface);
+}
 
 .top-actions { display: inline-flex; align-items: center; gap: 8px; }
 
@@ -563,7 +613,10 @@ a.f-tag--link:hover {
 /* ---------- responsive ---------- */
 
 @media (max-width: 820px) {
-  .nav { display: none; }
+  .nav a { padding: 8px 10px; font-size: 12px; }
+  .lockup .text span { display: none; }
+  .topbar-sub { padding: 0 8px; }
+  .topbar-sub a { padding: 10px 10px; font-size: 10px; }
   .two-col { grid-template-columns: 1fr; }
   .three-col { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
