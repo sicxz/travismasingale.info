@@ -337,6 +337,8 @@ a.f-tag--link:hover {
 
 .now-card p:last-child { margin-bottom: 0; }
 
+.now-card + .now-card { margin-top: 16px; }
+
 .now-meta {
   display: flex;
   flex-wrap: wrap;
