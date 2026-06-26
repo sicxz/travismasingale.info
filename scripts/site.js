@@ -1,34 +1,8 @@
-// travismasingale.info — page behavior
-// Theme toggle, JS-revealed email, contact form submit.
-
-(function () {
-  // ---------- theme toggle ----------
-  var root = document.documentElement;
-  var btn = document.getElementById('theme-toggle');
-  var label = document.getElementById('theme-toggle-label');
-
-  if (btn && label) {
-    var stored = null;
-    try { stored = localStorage.getItem('tm-theme'); } catch (e) {}
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(stored || (prefersDark ? 'dark' : 'light'));
-
-    btn.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      try { localStorage.setItem('tm-theme', next); } catch (e) {}
-    });
-  }
-
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    if (label) label.textContent = theme === 'dark' ? 'Light' : 'Dark';
-  }
-})();
+// travismasingale.info — site behavior.
+// Email reveal + contact form. (Navigation is plain hyperlinks.)
 
 (function () {
   // ---------- email reveal ----------
-  // Address is assembled at runtime so the raw HTML carries no scrapable string.
   var nodes = document.querySelectorAll('.js-email');
   for (var i = 0; i < nodes.length; i++) {
     var a = nodes[i];
@@ -38,7 +12,7 @@
     var addr = u + '@' + h;
     var subject = a.getAttribute('data-subject') || '';
     a.setAttribute('href', 'mailto:' + addr + (subject ? '?subject=' + encodeURIComponent(subject) : ''));
-    var handle = a.querySelector('.connect-handle');
+    var handle = a.querySelector('.handle');
     if (handle) handle.textContent = addr;
   }
 })();
@@ -51,11 +25,9 @@
   var status = document.getElementById('cf-status');
   var endpoint = form.getAttribute('action') || '';
 
-  // Enable the submit only after JS runs — naive scrapers without JS can't fire it.
   submit.disabled = false;
   submit.textContent = 'Send message';
 
-  // Time guard: fast-fire submits (< 2s after render) get rejected client-side.
   var renderedAt = Date.now();
 
   form.addEventListener('submit', function (e) {
