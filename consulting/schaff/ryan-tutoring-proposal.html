@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claude Tutoring — Proposal for Ryan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== FOUNDRY · ATELIER (inlined, no color) ===== */
+    :root{
+      --helv:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+      --serif:"Newsreader",Georgia,serif;
+      --mono:ui-monospace,"SFMono-Regular",Consolas,monospace;
+      --bg:#fafafa;--paper:#d8d8d8;--paper-2:#cccccc;
+      --ink:#0a0a0a;--ink-pure:#000;--on-ink:#f4f4f4;--soft:#4a4a4a;--rule:#9a9a9a;--line-on-ink:#2a2a2a;
+      --dur:120ms;--ease:cubic-bezier(.2,.6,.2,1);
+    }
+    [data-theme="dark"]{--bg:#161616;--paper:#1f1f1f;--paper-2:#242424;--ink:#e8e8e8;--ink-pure:#f4f4f4;--on-ink:#0a0a0a;--soft:#8a8a8a;--rule:#3a3a3a;--line-on-ink:#cfcfcf;}
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;}
+    body{background:var(--bg);color:var(--ink);font-family:var(--helv);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    i,em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.015em;}
+    a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:background var(--dur) var(--ease),color var(--dur) var(--ease);}
+    a:hover{background:var(--ink);color:var(--on-ink);text-decoration:none;}
+    *:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+    ::selection{background:var(--ink);color:var(--on-ink);}
+    .top{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px 32px;background:var(--ink-pure);color:var(--on-ink);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+    .top .mark{font-weight:800;font-size:13px;}
+    .top a{color:currentColor;text-decoration:none;padding:6px 12px;border:1px solid var(--line-on-ink);}
+    .top a:hover{border-color:currentColor;background:var(--on-ink);color:var(--ink-pure);}
+    .wrap{max-width:760px;margin:0 auto;padding:64px 32px 80px;}
+    .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:26px;font-family:var(--mono);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);}
+    .eyebrow::before{content:"";width:40px;height:1px;background:var(--ink);flex:0 0 auto;}
+    h1{margin:0 0 22px;font-size:clamp(36px,6vw,58px);font-weight:900;line-height:.96;letter-spacing:-.02em;text-wrap:balance;}
+    h1 i{font-weight:400;}
+    .lede{max-width:54ch;margin:0;color:var(--soft);font-size:clamp(17px,2vw,21px);line-height:1.45;text-wrap:pretty;}
+    h2{font-size:clamp(24px,3vw,32px);font-weight:900;line-height:1.04;letter-spacing:-.02em;margin:56px 0 0;}
+    h2 i{font-weight:400;}
+    p,li{font-size:16px;line-height:1.62;color:var(--ink);max-width:62ch;text-wrap:pretty;}
+    p{margin:16px 0 0;}
+    ul{padding-left:20px;margin:16px 0 0;}
+    li{margin:8px 0;}
+    strong{font-weight:700;}
+    hr{border:0;border-top:1px solid var(--rule);margin:48px 0 0;}
+    .rate{display:flex;align-items:baseline;gap:14px;margin-top:34px;padding-top:24px;border-top:1px solid var(--rule);}
+    .rate .num{font-size:44px;font-weight:900;letter-spacing:-.03em;line-height:1;}
+    .rate .unit{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--soft);text-transform:uppercase;}
+    .btn{display:inline-flex;min-height:44px;align-items:center;gap:8px;padding:0 18px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;cursor:pointer;}
+    .btn:hover{background:transparent;color:var(--ink);}
+    .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:32px;margin-top:64px;border-top:3px solid var(--ink);color:var(--soft);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;}
+    .foot .end{color:var(--ink);font-weight:900;}
+    @media (max-width:600px){.foot{flex-direction:column;}}
+    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <span class="mark">TRAVIS MASINGALE</span>
+    <a href="index.html">Schaff index ↩</a>
+  </header>
+
+  <main class="wrap">
+    <span class="eyebrow">Proposal · Individual tutoring</span>
+    <h1>Practical Claude tutoring, <i>built around your real work.</i></h1>
+    <p class="lede">A simple, hourly way to get more out of Claude for everyday Schaff work — without making your workflow more complicated.</p>
+
+    <div class="rate">
+      <span class="num">$175<span class="unit"> / hour</span></span>
+    </div>
+    <p>Pay as you go — no package, no commitment. Book a session when it's useful; today counts as session one.</p>
+
+    <h2>What we'll <i>work on.</i></h2>
+    <p>Real tasks, not made-up examples — each session leaves you with one or two things Claude saves you time on:</p>
+    <ul>
+      <li>Turn messy notes into clean, reviewable project updates</li>
+      <li>Draft client follow-ups that don't overpromise</li>
+      <li>Build missing-information checklists so nothing slips</li>
+      <li>Prepare JobTread-ready updates for your review</li>
+    </ul>
+
+    <h2>How it <i>works.</i></h2>
+    <ul>
+      <li><strong>$175/hour</strong>, billed per session — book weekly, biweekly, or as things come up</li>
+      <li>~60-minute hands-on sessions, plus a short recap and one practice step after each</li>
+      <li>Claude drafts and organizes; <strong>you stay in control</strong> — estimates, permits, budgets, contracts, and client commitments stay with you</li>
+    </ul>
+
+    <hr />
+    <p><strong>Next step:</strong> reply and we'll get the next session on the calendar. Want it shaped around your exact work first? Say so and I'll send a quick 5-minute Claude interview to tailor it.</p>
+    <p style="margin-top:24px;"><a class="btn" href="mailto:tmasingale@gmail.com?subject=Claude%20tutoring%20%E2%80%94%20let's%20schedule">Reply to schedule →</a></p>
+  </main>
+
+  <footer class="foot">
+    <span>Travis Masingale · Claude workflow coaching</span>
+    <span class="end">For Ryan · Schaff</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Schaff Engagement — Internal Playbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== FOUNDRY · ATELIER (inlined, no color) ===== */
+    :root{
+      --helv:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+      --serif:"Newsreader",Georgia,serif;
+      --mono:ui-monospace,"SFMono-Regular",Consolas,monospace;
+      --bg:#fafafa;--paper:#d8d8d8;--paper-2:#cccccc;
+      --ink:#0a0a0a;--ink-pure:#000;--on-ink:#f4f4f4;--soft:#4a4a4a;--rule:#9a9a9a;--line-on-ink:#2a2a2a;
+      --dur:120ms;--ease:cubic-bezier(.2,.6,.2,1);
+    }
+    [data-theme="dark"]{--bg:#161616;--paper:#1f1f1f;--paper-2:#242424;--ink:#e8e8e8;--ink-pure:#f4f4f4;--on-ink:#0a0a0a;--soft:#8a8a8a;--rule:#3a3a3a;--line-on-ink:#cfcfcf;}
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;}
+    body{background:var(--bg);color:var(--ink);font-family:var(--helv);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    i,em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.015em;}
+    a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:background var(--dur) var(--ease),color var(--dur) var(--ease);}
+    a:hover{background:var(--ink);color:var(--on-ink);text-decoration:none;}
+    *:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+    ::selection{background:var(--ink);color:var(--on-ink);}
+    .top{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px 32px;background:var(--ink-pure);color:var(--on-ink);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+    .top .mark{font-weight:800;font-size:13px;}
+    .top a{color:currentColor;text-decoration:none;padding:6px 12px;border:1px solid var(--line-on-ink);}
+    .top a:hover{border-color:currentColor;background:var(--on-ink);color:var(--ink-pure);}
+    .wrap{max-width:820px;margin:0 auto;padding:48px 32px 80px;}
+    h1{margin:0 0 22px;font-size:clamp(36px,6vw,58px);font-weight:900;line-height:.96;letter-spacing:-.02em;text-wrap:balance;}
+    h1 i{font-weight:400;}
+    .lede{max-width:56ch;margin:0;color:var(--soft);font-size:clamp(17px,2vw,21px);line-height:1.45;text-wrap:pretty;}
+    .sh{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:baseline;margin:64px 0 24px;padding-bottom:18px;border-bottom:3px solid var(--ink);}
+    .sh .num,.sh .meta{font-family:var(--mono);font-size:11px;font-weight:800;text-transform:uppercase;color:var(--soft);}
+    .sh h2{margin:0;font-size:clamp(22px,2.6vw,30px);font-weight:900;line-height:1.04;letter-spacing:-.02em;}
+    .sh h2 i{font-weight:400;}
+    p,li{font-size:15.5px;line-height:1.6;color:var(--ink);max-width:70ch;text-wrap:pretty;}
+    p{margin:14px 0 0;}
+    ul,ol{padding-left:20px;margin:14px 0 0;}
+    li{margin:7px 0;}
+    strong{font-weight:700;}
+    h4{margin:24px 0 0;font-family:var(--mono);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);}
+    .note{margin:18px 0 0;padding:14px 18px;border-left:2px solid var(--ink);background:var(--paper);font-size:14px;line-height:1.55;max-width:72ch;}
+    .note b{display:block;margin-bottom:4px;font-family:var(--mono);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);}
+    .email{margin:18px 0 0;border:1px solid var(--rule);background:var(--paper);padding:20px 22px;max-width:72ch;}
+    .email .lbl{font-family:var(--mono);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:12px;}
+    .email p{font-size:14px;line-height:1.62;margin:0 0 10px;max-width:none;}
+    .email p:last-child{margin-bottom:0;}
+    .card{padding:22px;border:1px solid var(--rule);background:transparent;}
+    .card h3{margin:0 0 10px;font-size:15px;font-weight:800;}
+    .card ul{margin:0;padding-left:18px;}
+    .card li{font-size:13.5px;color:var(--soft);margin:6px 0;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;}
+    @media (max-width:760px){.grid-2{grid-template-columns:1fr;}}
+    pre{margin:14px 0 0;padding:16px;background:var(--paper);border:1px solid var(--rule);overflow-x:auto;font-family:var(--mono);font-size:12px;line-height:1.5;white-space:pre-wrap;max-width:72ch;}
+    table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0 0;}
+    th,td{text-align:left;padding:10px 12px;border:1px solid var(--rule);vertical-align:top;}
+    thead th{background:var(--ink);color:var(--on-ink);font-family:var(--mono);font-size:10px;font-weight:800;text-transform:uppercase;}
+    tbody th{font-weight:800;}
+    .agenda{margin:14px 0 0;}
+    .agenda-row{display:grid;grid-template-columns:108px 1fr;gap:20px;padding:16px 0;border-top:1px solid var(--rule);}
+    .agenda-row:last-child{border-bottom:1px solid var(--rule);}
+    .agenda-time{font-family:var(--mono);font-size:11px;font-weight:800;color:var(--soft);text-transform:uppercase;padding-top:2px;}
+    .agenda-row h5{margin:0 0 6px;font-size:14.5px;font-weight:800;}
+    .agenda-row p{margin:0 0 6px;font-size:13.5px;color:var(--soft);max-width:none;}
+    .agenda-row ul{margin:6px 0 0;padding-left:18px;}
+    .agenda-row li{font-size:13px;color:var(--soft);margin:4px 0;}
+    @media (max-width:600px){.agenda-row{grid-template-columns:1fr;gap:4px;}}
+    .stamp{display:inline-block;padding:6px 12px;border:2px solid var(--ink);color:var(--ink);font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
+    .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:32px;margin-top:64px;border-top:3px solid var(--ink);color:var(--soft);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;}
+    .foot .end{color:var(--ink);font-weight:900;}
+    /* password gate */
+    #gate{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px;}
+    #gate form{width:100%;max-width:360px;border:1px solid var(--ink);background:var(--paper);padding:28px;}
+    #gate .glabel{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin-bottom:18px;}
+    #gate .glabel::before{content:"";width:30px;height:1px;background:var(--ink);}
+    #gate input{width:100%;padding:12px 14px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:14px;}
+    #gate input:focus{outline:none;border-color:var(--ink);}
+    #gate button{margin-top:14px;width:100%;min-height:44px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;}
+    #gate button:hover{background:transparent;color:var(--ink);}
+    #gate .gerr{display:none;margin:12px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink);font-weight:700;}
+    @media (max-width:600px){.foot{flex-direction:column;}}
+    @media print{.top{position:static;}#gate{display:none!important;}body{background:#fff;color:#000;}a{color:#000;}}
+  </style>
+</head>
+<body>
+  <!-- ============ PASSWORD GATE (deterrence, not encryption) ============
+       To change the password: in any terminal run
+         echo -n "YOURNEWPASSWORD" | shasum -a 256
+       and paste the hex digest into the GATE_HASH constant below. -->
+  <div id="gate">
+    <form id="gform" autocomplete="off">
+      <span class="glabel">Internal — password</span>
+      <input id="gpass" type="password" placeholder="Enter password" aria-label="Password" autofocus />
+      <button type="submit">Unlock</button>
+      <p id="gerr" class="gerr">Incorrect — try again.</p>
+    </form>
+  </div>
+
+  <header class="top">
+    <span class="mark">TRAVIS · INTERNAL PLAYBOOK</span>
+    <a href="index.html">Schaff index ↩</a>
+  </header>
+
+  <main class="wrap">
+    <span class="stamp">Internal — do not send to client</span>
+    <h1 style="margin-top:24px;">Schaff engagement <i>playbook.</i></h1>
+    <p class="lede">Your prep for the Schaff work. Everything here is for your eyes — the client-facing material lives in the two proposals.</p>
+
+    <div class="note">
+      <b>The three pages</b>
+      <strong>Ryan tutoring proposal</strong> → send to Ryan ($175/hr). &nbsp;·&nbsp; <strong>Company proposal</strong> → Ryan forwards up the chain ($1,500 diagnostic). &nbsp;·&nbsp; <strong>This playbook</strong> → never sent.
+    </div>
+
+    <div class="sh"><span class="num">01</span><h2>Positioning &amp; <i>lane.</i></h2><span class="meta">How to talk about it</span></div>
+    <h4>Full positioning statement</h4>
+    <p>My role is not to tell Schaff how to run construction projects. My role is to help Ryan and Jessica use Claude and JobTread more consistently, safely, and efficiently. I'll observe how the work happens now, identify where AI can reduce repetitive drafting or organizing, and help build simple review loops that keep humans in control of estimates, permits, budgets, contracts, client commitments, and financial decisions.</p>
+    <h4>Shorter version</h4>
+    <p>I'm here to help you get more practical value from Claude without making the workflow more complicated. We'll start with what you already do, find the parts that are repetitive or hard to keep organized, and build small Claude workflows that support your judgment instead of replacing it.</p>
+    <div class="note"><b>Loop framing</b>Show the real work → Claude helps draft, check, or organize → human reviews → JobTread gets cleaner → repeat with less friction. This is workflow design, not AI hype.</div>
+
+    <div class="sh"><span class="num">02</span><h2>Ryan tutoring session <i>agenda.</i></h2><span class="meta">~60 min</span></div>
+    <div class="agenda">
+      <div class="agenda-row"><div class="agenda-time">0–5 min</div><div><h5>Set expectations</h5><p>"Today isn't about automating the company. It's about finding two or three places where Claude can save you time this week."</p><ul><li>Where do you lose the most time right now?</li><li>What do you repeat every week?</li><li>What do you avoid because it takes too much setup?</li></ul></div></div>
+      <div class="agenda-row"><div class="agenda-time">5–15 min</div><div><h5>Claude Desktop tour</h5><ul><li>Standard chat vs. structured work chat</li><li>Starting a clean conversation for a specific task</li><li>Pasting notes, emails, project context</li><li>Asking for a specific output format</li><li>Treating Claude's output as a draft, not truth</li></ul></div></div>
+      <div class="agenda-row"><div class="agenda-time">15–30 min</div><div><h5>Teach one repeatable prompt pattern</h5><p>"Claude is strongest when you give it the messy input and a clear definition of the finished output."</p></div></div>
+      <div class="agenda-row"><div class="agenda-time">30–45 min</div><div><h5>Cowork walkthrough</h5><p>Frame Cowork as "Claude for tasks that need a little more persistence, structure, or follow-through." Live example: project notes → missing-information checklist + clean internal update for human review before JobTread entry.</p></div></div>
+      <div class="agenda-row"><div class="agenda-time">45–55 min</div><div><h5>Build Ryan's first reusable workflow — "Project Notes Cleaner"</h5><p><strong>Input:</strong> raw notes from a call, site visit, text thread, email, or meeting. <strong>Output:</strong> clean summary, decisions, open questions, missing JobTread fields, risks/unclear commitments, draft JobTread update, items needing Ryan/Jessica review.</p></div></div>
+      <div class="agenda-row"><div class="agenda-time">55–60 min</div><div><h5>Assign one practice task</h5><p>"Before next time, take one messy note or client update, run it through the Project Notes Cleaner, and bring me the output — we'll improve the workflow."</p></div></div>
+    </div>
+
+    <div class="sh"><span class="num">03</span><h2>First working-session <i>agenda.</i></h2><span class="meta">~90 min · "show me how this works now"</span></div>
+    <div class="agenda">
+      <div class="agenda-row"><div class="agenda-time">0–10 min</div><div><h5>Frame the session</h5><p>"I'm not here to judge the workflow or prescribe a construction process. I'm here to understand where information enters, where it gets stuck, and where Claude or JobTread could support the process."</p></div></div>
+      <div class="agenda-row"><div class="agenda-time">10–25 min</div><div><h5>Show me JobTread</h5><ul><li>Where a new lead enters; where notes live; where project status lives</li><li>Where tasks/follow-ups, estimate notes, permit status live</li><li>Where client communications are stored or referenced</li><li>Which fields people trust, ignore, or work around</li></ul></div></div>
+      <div class="agenda-row"><div class="agenda-time">25–40 min</div><div><h5>Show me a real recent workflow</h5><p>"Can you show me one recent project or lead where the workflow felt messy?" Watch for: duplicate entry, missing info, data living in texts/emails, unclear ownership, manual retyping, memory-dependent follow-ups.</p></div></div>
+      <div class="agenda-row"><div class="agenda-time">40–55 min</div><div><h5>Show me Claude usage</h5><p><strong>Ryan:</strong> show me the last thing you asked Claude — what did it do well, where didn't you trust it, what would make it more useful? <strong>Jessica:</strong> what already works, what would be annoying for me to re-explain, where would a shared template help?</p></div></div>
+      <div class="agenda-row"><div class="agenda-time">55–70 min</div><div><h5>Identify one safe pilot candidate</h5><p>Look for: lead/project notes → Claude summary → missing-info checklist → JobTread-ready update → human review.</p></div></div>
+      <div class="agenda-row"><div class="agenda-time">70–90 min</div><div><h5>Confirm next step</h5><p>"I'll write up a short findings note and recommend one low-risk pilot. If it looks useful, we test it for two weeks. If it doesn't, we stop there."</p></div></div>
+    </div>
+
+    <div class="sh"><span class="num">04</span><h2>Materials to <i>request.</i></h2><span class="meta">Real examples beat abstractions</span></div>
+    <div class="grid-2">
+      <div class="card"><h3>For Ryan's tutoring session</h3><ul><li>One messy project note</li><li>One client message/email thread he needs to answer</li><li>One example of something he's asked Claude before</li><li>One recurring weekly task he dislikes</li><li>One JobTread update he wishes were easier to prepare</li></ul></div>
+      <div class="card"><h3>For the diagnostic</h3><ul><li>One recent lead/intake example</li><li>One active project example</li><li>One estimate-adjacent + one permit-related example (observation only)</li><li>One client communication thread</li><li>One example of info outside JobTread; one where it was trusted; one where it wasn't</li><li>Existing templates, checklists, SOPs, onboarding docs</li><li>Current Claude prompts/workflows already in use</li></ul></div>
+    </div>
+
+    <div class="sh"><span class="num">05</span><h2>Tutorials to give <i>Ryan.</i></h2><span class="meta">"Try this once"</span></div>
+    <h4>Tutorial 1 — messy notes → clean project update</h4>
+    <pre>Use Cowork to help me clean up these notes.
+
+Goal: Create an internal project update I can review before putting anything into JobTread.
+
+Output:
+1. 5-bullet summary
+2. Missing information
+3. Questions I need answered
+4. Draft JobTread update
+5. Items that require owner review
+
+Rules:
+- Do not invent missing facts.
+- Mark uncertain items as "needs confirmation."
+- Do not make client-facing promises.
+- Flag anything related to estimate, budget, permit, contract, or schedule risk.
+
+Notes:
+[paste notes]</pre>
+    <h4>Tutorial 2 — prepare for a client follow-up</h4>
+    <pre>Help me prepare for a client follow-up.
+
+Context: I need to respond professionally, but I want to make sure I do not overpromise.
+
+Input: [paste client message or notes]
+
+Output:
+1. What the client is asking for
+2. What we know
+3. What we do not know yet
+4. Draft response for human review
+5. Internal checklist before sending
+
+Rules:
+- Keep the tone clear and professional.
+- Do not commit to cost, timing, permit status, or scope changes unless explicitly stated.
+- Flag anything Jessica or another construction professional should validate.</pre>
+    <h4>Tutorial 3 — weekly owner review</h4>
+    <pre>Act as my weekly operations review assistant.
+
+Goal: Help me see what needs attention this week.
+
+Use the notes below and create:
+1. Active items
+2. Stuck items
+3. Waiting-on-someone items
+4. Client communication needed
+5. JobTread cleanup needed
+6. Risks requiring human judgment
+
+Rules:
+- Do not decide priorities for me; suggest them.
+- Separate confirmed facts from assumptions.
+- Keep estimates, budget, permits, contracts, and client commitments in the "human review required" section.
+
+Notes:
+[paste notes or project list]</pre>
+
+    <div class="sh"><span class="num">06</span><h2>First low-risk <i>pilot.</i></h2><span class="meta">Project notes → JobTread-ready</span></div>
+    <table>
+      <thead><tr><th>Area</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><th>Inputs</th><td>Call notes, site-visit notes, email/text snippets, internal meeting notes, voice-memo transcript if available, existing JobTread context if manually provided.</td></tr>
+        <tr><th>Claude outputs</th><td>Plain-language summary, apparent decisions, missing-information checklist, open questions, risk/uncertainty flags, draft JobTread-ready update, human-review-required section.</td></tr>
+        <tr><th>Workflow steps</th><td>Gather notes → Claude summarizes/organizes → flags missing/uncertain info → drafts JobTread-ready update → human reviews → human enters/approves in JobTread → save the useful prompt/template.</td></tr>
+        <tr><th>Success metrics</th><td>Time saved, clearer updates, more complete JobTread entries, less retyping, fewer missed follow-ups, enough trust to keep using it, no extra review burden.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Mandatory human-review gates</b>Estimates, permits, contracts, client-facing commitments, budgets, financial decisions, scope changes, timeline promises, and anything Claude marks uncertain.</div>
+
+    <div class="sh"><span class="num">07</span><h2>Discovery <i>tools.</i></h2><span class="meta">If the work expands</span></div>
+    <div class="grid-2">
+      <div class="card"><h3>Needs-assessment survey</h3><ul><li>What recurring task takes more time than it should?</li><li>Where does information get lost or duplicated?</li><li>Which JobTread fields do you trust most? Which do you work around?</li><li>What have you used Claude for successfully? Where didn't you trust it?</li><li>Which workflows need human approval no matter what?</li></ul></div>
+      <div class="card"><h3>Claude usage audit</h3><ul><li>What prompts are already working?</li><li>Who uses Claude most effectively?</li><li>Where are outputs reviewed before use?</li><li>Where does hallucination/overconfidence create risk?</li><li>Which repeatable tasks deserve templates?</li></ul></div>
+      <div class="card"><h3>CRM trust audit</h3><ul><li>Source of truth for leads, projects, notes, estimates, permits, client comms, tasks, status?</li><li>Where does data enter JobTread? Where does it stay outside?</li><li>Which fields are incomplete, stale, duplicated, or ignored?</li><li>What would make Ryan/Jessica trust the system more?</li></ul></div>
+      <div class="card"><h3>Data-protection checklist</h3><ul><li>Redact sensitive client details when possible.</li><li>Don't paste unnecessary financial, contract, or private info.</li><li>Keep client-facing commitments under human review.</li><li>Document what's safe to use with Claude.</li><li>Use templates that instruct Claude not to invent facts.</li><li>Keep JobTread as the source of truth for official records.</li></ul></div>
+    </div>
+
+    <div class="sh"><span class="num">08</span><h2>One-page findings <i>template.</i></h2><span class="meta">Keep the first deliverable short</span></div>
+    <ol>
+      <li><strong>What's already working</strong> — where Ryan, Jessica, Claude, or JobTread already help the work move.</li>
+      <li><strong>Where the team is losing time</strong> — repeated drafting, missing info, duplicate entry, unclear ownership, memory-dependent follow-ups.</li>
+      <li><strong>Where JobTread data/trust is weak</strong> — incomplete fields, stale status, info outside the CRM, areas people avoid.</li>
+      <li><strong>Where Claude can help safely</strong> — summarizing, drafting, checklists, missing-info detection, internal updates, with human review.</li>
+      <li><strong>Recommended next pilot</strong> — one low-risk loop with inputs, outputs, review gates, and success metrics.</li>
+    </ol>
+
+    <div class="sh"><span class="num">09</span><h2>How to <i>send it.</i></h2><span class="meta">Sequence + email drafts</span></div>
+    <p><strong>Sequence:</strong> Send Ryan his tutoring proposal first — it's the easy yes and keeps it personal. Once he's in (or separately, whenever it fits), share the company proposal as the bigger conversation he can forward to Jessica/leadership. <strong>Don't bundle them.</strong></p>
+
+    <div class="email">
+      <div class="lbl">Email 1 — to Ryan (with the tutoring proposal)</div>
+      <p><strong>Subject:</strong> Claude tutoring — next steps</p>
+      <p>Hi Ryan — thanks again for today. Since we already did the discovery conversation a couple weeks ago, I'm treating today as our first hands-on session.</p>
+      <p>I put together a short proposal — keeping it simple and hourly: <strong>$175/hour, no package, just book a session when it's useful.</strong> Here it is: <a href="https://travismasingale.info/consulting/schaff/ryan-tutoring-proposal.html">travismasingale.info/consulting/schaff/ryan-tutoring-proposal.html</a></p>
+      <p>The focus is practical — organizing project notes, prepping follow-ups, missing-info checklists, and JobTread-ready drafts you review before anything goes in. Estimates, permits, budgets, contracts, and client commitments stay in your hands; Claude just drafts and organizes.</p>
+      <p>There's also an optional 5-minute Claude interview I can send if you want the sessions tailored to your work. Otherwise we're set for <strong>July 22 at 10:00 AM</strong> — calendar invite to follow.</p>
+      <p>Best,<br/>Travis</p>
+    </div>
+
+    <div class="email">
+      <div class="lbl">Email 2 — to Ryan / Jessica / leadership (with the company proposal)</div>
+      <p><strong>Subject:</strong> Schaff — a small first step with Claude + JobTread</p>
+      <p>Hi [name] — following up on getting more out of Claude alongside the JobTread switch. I'd suggest starting small and bounded: a <strong>two-week assessment for a flat $1,500</strong>, with a written findings report and one recommended low-risk pilot. Full scope here: <a href="https://travismasingale.info/consulting/schaff/schaff-company-proposal.html">travismasingale.info/consulting/schaff/schaff-company-proposal.html</a></p>
+      <p>Nothing open-ended — anything larger only gets quoted if the findings clearly justify it, and humans stay in control of estimates, permits, budgets, contracts, and client commitments throughout.</p>
+      <p>Happy to walk you (or whoever owns the CRM transition) through it. If it's a fit, reply and we'll schedule the two weeks.</p>
+      <p>Best,<br/>Travis</p>
+    </div>
+
+    <div class="note"><b>If Ryan forwards Email 2</b>One line he can paste on top: "Travis put together a small, bounded first step on Claude + JobTread — a two-week, $1,500 assessment with a findings report and one pilot. No big commitment. Worth a look."</div>
+    <div class="note"><b>Before sending — check</b>Names and rates correct ($175/hr for Ryan, $1,500 flat for the diagnostic) · links resolve once the site is deployed · no internal notes in the client pages · redact any real client details if you attach examples.</div>
+
+    <div class="sh"><span class="num">10</span><h2>Claude interview prompts <i>(optional).</i></h2><span class="meta">Send on request</span></div>
+    <p>Pulled out of the client proposals to keep them short. Use only if you want a tailored brief before quoting: send <strong>Prompt A</strong> to Ryan, or <strong>Prompt B</strong> to whoever owns the CRM transition. Ask them to paste it into Claude and send back the <strong>Custom Package Brief for Travis</strong> section.</p>
+    <h4>Prompt A — Ryan individual tutoring</h4>
+    <pre>You are interviewing me so Travis can design my individual Claude tutoring package.
+
+Context:
+I am Ryan at Schaff. I want individual help learning how to use Claude Desktop and Cowork in practical ways. This is separate from the company's broader Buildertrend to JobTread CRM transition.
+
+Travis's lane:
+Travis can help with Claude tutoring, Cowork setup, prompt design, workflow habits, practice exercises, and turning real work into repeatable Claude-supported routines. He is not here to make construction decisions for me.
+
+Important boundaries:
+Claude should support my judgment, not replace it. Estimates, permits, contracts, budgets, client commitments, financial decisions, and construction decisions stay under human review.
+
+Your job:
+Interview me one question at a time to understand what I actually want from individual tutoring. Do not stay topical. If I say "learn Claude," ask what I want Claude to help me do in a real workday. If I say "save time," ask where the time is currently going. If I say "Cowork," ask what recurring outcome would make Cowork worth using.
+
+Interview rules:
+- Ask one question at a time.
+- Follow up when my answer is vague.
+- Ask for real examples from recent work.
+- Separate tool confidence from business outcomes.
+- Every 5 to 7 questions, summarize what you think you have learned and ask if it is right.
+
+Start with this question:
+"If these individual Claude tutoring sessions were genuinely successful, what would you be able to do afterward that you cannot comfortably do now?"
+
+When you have enough information, or when I say "done," output a section titled "Custom Package Brief for Travis — Ryan Individual Tutoring" covering: executive summary, desired outcomes, confidence/skill gaps, best first tutoring topics, useful workflows to build, a recommended tutoring plan, success criteria, and useful quotes.</pre>
+    <h4>Prompt B — company CRM transition / workflow insight</h4>
+    <pre>You are interviewing me so Travis can design a company-level support package for Schaff.
+
+Context:
+Schaff is switching from Buildertrend to JobTread CRM. The company needs insight, training, workflow support, and help making the CRM transition useful and trusted. This is separate from Ryan's individual Claude tutoring.
+
+Travis's lane:
+Travis is not a construction management expert. He can help with workflow discovery, training design, AI-supported onboarding, prompt/template systems, documentation, adoption support, and safe ways to use Claude around JobTread. He should not make construction, estimating, legal, budget, permit, or financial decisions.
+
+Your job:
+Interview me one question at a time to uncover what the company actually needs from Travis. Do not just ask "what training do you need?" Dig into the Buildertrend to JobTread transition, where data and trust are breaking down, what people need to learn, what insights leadership needs, and what would make the switch successful.
+
+Interview rules:
+- Ask one question at a time.
+- Follow up when answers are vague.
+- Ask for concrete examples from Buildertrend, JobTread, current projects, handoffs, leads, estimates, permits, client communication, and project updates.
+- Distinguish migration problems, training problems, workflow problems, trust problems, and AI opportunities.
+- Do not propose automation first. Look first for insight, training, templates, documentation, and human-reviewed workflows.
+- Every 5 to 7 questions, summarize what you have learned and ask if it is accurate.
+
+Start with this question:
+"What would make the Buildertrend to JobTread transition successful enough that Schaff feels the new system is worth the effort?"
+
+When you have enough information, or when I say "done," output a section titled "Custom Package Brief for Travis — Company CRM Transition and Training" covering: executive summary, transition needs, company desired outcomes, training needs by role, workflow/data-trust pain points, ranked safe Claude opportunities, a recommended company package, success criteria, open questions for Travis, and useful quotes.</pre>
+  </main>
+
+  <footer class="foot">
+    <span>Travis Masingale · Internal playbook</span>
+    <span class="end">Schaff · Do not send</span>
+  </footer>
+
+  <script>
+    /* Password gate — deterrence only (static host; content is in the DOM).
+       Default password: schaff2026  ·  change via the GATE_HASH constant (see top comment). */
+    (function(){
+      var GATE_HASH = "5bdc9577d5552585f8ac696181166f3a0d70e8e69c2fe0d97f4e680af04904d0";
+      var KEY = "schaff_playbook_ok";
+      var gate = document.getElementById("gate");
+      var form = document.getElementById("gform");
+      var err = document.getElementById("gerr");
+      function unlock(){ gate.style.display = "none"; document.documentElement.style.overflow=""; }
+      function lock(){ document.documentElement.style.overflow="hidden"; }
+      async function sha256(str){
+        var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+        return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0");}).join("");
+      }
+      if (sessionStorage.getItem(KEY) === "1"){ unlock(); } else { lock(); }
+      form.addEventListener("submit", async function(e){
+        e.preventDefault();
+        var val = document.getElementById("gpass").value;
+        try {
+          var h = await sha256(val);
+          if (h === GATE_HASH){ sessionStorage.setItem(KEY,"1"); unlock(); }
+          else { err.style.display="block"; }
+        } catch(_){ /* crypto.subtle needs https or localhost */ err.textContent="Open over https:// or localhost to unlock."; err.style.display="block"; }
+      });
+    })();
+  </script>
+</body>
+</html>
