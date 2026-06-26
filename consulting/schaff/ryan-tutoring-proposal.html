@@ -52,7 +52,11 @@
     .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:32px;margin-top:64px;border-top:3px solid var(--ink);color:var(--soft);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;}
     .foot .end{color:var(--ink);font-weight:900;}
     @media (max-width:600px){.foot{flex-direction:column;}}
-    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}}
+    .prompt{margin-top:20px;border:1px solid var(--rule);background:var(--paper);}
+    .prompthead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--soft);}
+    .prompt pre{margin:0;padding:18px 16px;font-family:var(--mono);font-size:12.5px;line-height:1.62;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);max-width:none;}
+    .copybtn{min-height:32px;padding:0 12px;font-size:11px;}
+    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}.copybtn{display:none;}.prompt{break-inside:avoid;border-color:#000;}}
   </style>
 </head>
 <body>
@@ -88,13 +92,57 @@
     </ul>
 
     <hr />
-    <p><strong>Next step:</strong> reply and we'll get the next session on the calendar. Want it shaped around your exact work first? Say so and I'll send a quick 5-minute Claude interview to tailor it.</p>
-    <p style="margin-top:24px;"><a class="btn" href="mailto:tmasingale@gmail.com?subject=Claude%20tutoring%20%E2%80%94%20let's%20schedule">Reply to schedule →</a></p>
+    <h2>Next <i>step.</i></h2>
+    <p>We're set for a <strong>standing weekly session — Wednesdays at 10:00 AM</strong>, starting <strong>Wednesday, July 22</strong>. Same time each week; calendar invite to follow. Nothing to reply to — we'll meet then and shape each session around whatever's on your plate that week.</p>
+
+    <h2>Tailor it to your work <i>(optional).</i></h2>
+    <p>Want our sessions built around your exact work before we start? It takes about five minutes: paste the prompt below into Claude and answer naturally. When it finishes, it'll produce a <strong>"Custom Package Brief for Travis"</strong> — send that back to me and I'll shape our sessions around it.</p>
+    <div class="prompt">
+      <div class="prompthead"><span>Paste into Claude</span><button class="btn copybtn" type="button" data-target="promptA">Copy</button></div>
+      <pre id="promptA">You are interviewing me so Travis can design my individual Claude tutoring package.
+
+Context:
+I am Ryan at Schaff. I want individual help learning how to use Claude Desktop and Cowork in practical ways. This is separate from the company's broader Buildertrend to JobTread CRM transition.
+
+Travis's lane:
+Travis can help with Claude tutoring, Cowork setup, prompt design, workflow habits, practice exercises, and turning real work into repeatable Claude-supported routines. He is not here to make construction decisions for me.
+
+Important boundaries:
+Claude should support my judgment, not replace it. Estimates, permits, contracts, budgets, client commitments, financial decisions, and construction decisions stay under human review.
+
+Your job:
+Interview me one question at a time to understand what I actually want from individual tutoring. Do not stay topical. If I say "learn Claude," ask what I want Claude to help me do in a real workday. If I say "save time," ask where the time is currently going. If I say "Cowork," ask what recurring outcome would make Cowork worth using.
+
+Interview rules:
+- Ask one question at a time.
+- Follow up when my answer is vague.
+- Ask for real examples from recent work.
+- Separate tool confidence from business outcomes.
+- Every 5 to 7 questions, summarize what you think you have learned and ask if it is right.
+
+Start with this question:
+"If these individual Claude tutoring sessions were genuinely successful, what would you be able to do afterward that you cannot comfortably do now?"
+
+When you have enough information, or when I say "done," output a section titled "Custom Package Brief for Travis — Ryan Individual Tutoring" covering: executive summary, desired outcomes, confidence/skill gaps, best first tutoring topics, useful workflows to build, a recommended tutoring plan, success criteria, and useful quotes.</pre>
+    </div>
   </main>
 
   <footer class="foot">
     <span>Travis Masingale · Claude workflow coaching</span>
     <span class="end">For Ryan · Schaff</span>
   </footer>
+
+  <script>
+    document.querySelectorAll('.copybtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        var pre=document.getElementById(b.dataset.target);
+        if(!pre||!navigator.clipboard)return;
+        navigator.clipboard.writeText(pre.innerText).then(function(){
+          var prev=b.textContent;b.textContent='Copied ✓';
+          setTimeout(function(){b.textContent=prev;},1600);
+        });
+      });
+    });
+  </script>
 </body>
 </html>

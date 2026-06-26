@@ -54,7 +54,11 @@
     .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:32px;margin-top:64px;border-top:3px solid var(--ink);color:var(--soft);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;}
     .foot .end{color:var(--ink);font-weight:900;}
     @media (max-width:600px){.foot{flex-direction:column;}}
-    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}}
+    .prompt{margin-top:20px;border:1px solid var(--rule);background:var(--paper);}
+    .prompthead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--soft);}
+    .prompt pre{margin:0;padding:18px 16px;font-family:var(--mono);font-size:12.5px;line-height:1.62;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);max-width:none;}
+    .copybtn{min-height:32px;padding:0 12px;font-size:11px;}
+    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}.copybtn{display:none;}.prompt{break-inside:avoid;border-color:#000;}}
   </style>
 </head>
 <body>
@@ -65,39 +69,71 @@
 
   <main class="wrap">
     <span class="eyebrow">Proposal · Company engagement</span>
-    <h1>A small, safe first step on <i>Claude and JobTread.</i></h1>
-    <p class="lede">A two-week assessment to find where Claude can quietly save the team time alongside the JobTread switch — with humans in control of every decision that matters.</p>
+    <h1>Start with the work, <i>not a quote.</i></h1>
+    <p class="lede">Before anyone talks price, I want to understand how Schaff actually works — through one short interview you run yourselves. Everything else follows from what it turns up.</p>
 
     <p>My role isn't to tell Schaff how to run construction. It's to help the team use Claude and JobTread more consistently and safely. JobTread stays the source of truth; Claude just drafts, summarizes, checks, and organizes. Estimates, permits, contracts, budgets, and client commitments stay with your people.</p>
 
-    <div class="rate">
-      <span class="num">$1,500<span class="unit"> flat · two-week diagnostic</span></span>
-    </div>
-    <p>A Claude + JobTread workflow assessment: a written findings report and one recommended low-risk pilot. No retainer, no big AI program — and if the evidence doesn't support going further, the report will say so.</p>
+    <h2>Step one — the <i>interview.</i></h2>
+    <p>This first step costs nothing and commits to nothing. Whoever owns the Buildertrend → JobTread transition — Jessica is the natural fit — pastes the prompt below into Claude and answers naturally. It takes about ten minutes and ends by producing a <strong>"Custom Package Brief for Travis."</strong> Send that brief back to me and we're underway.</p>
+    <div class="prompt">
+      <div class="prompthead"><span>Paste into Claude</span><button class="btn copybtn" type="button" data-target="promptB">Copy</button></div>
+      <pre id="promptB">You are interviewing me so Travis can design a company-level support package for Schaff.
 
-    <h2>What the two weeks <i>cover.</i></h2>
-    <ul>
-      <li><strong>Who I talk to</strong> — Ryan, Jessica, the JobTread/admin person, and optionally one field or office person.</li>
-      <li><strong>What I review</strong> — a handful of real workflows: a lead, a project update, a client thread, JobTread entry, and current Claude use (estimates and permits observed only).</li>
-      <li><strong>What you get</strong> — what's working, where time is lost, where JobTread trust is weak, where Claude helps safely, what stays human-controlled, and one pilot to try.</li>
-    </ul>
+Context:
+Schaff is switching from Buildertrend to JobTread CRM. The company needs insight, training, workflow support, and help making the CRM transition useful and trusted. This is separate from Ryan's individual Claude tutoring.
+
+Travis's lane:
+Travis is not a construction management expert. He can help with workflow discovery, training design, AI-supported onboarding, prompt/template systems, documentation, adoption support, and safe ways to use Claude around JobTread. He should not make construction, estimating, legal, budget, permit, or financial decisions.
+
+Your job:
+Interview me one question at a time to uncover what the company actually needs from Travis. Do not just ask "what training do you need?" Dig into the Buildertrend to JobTread transition, where data and trust are breaking down, what people need to learn, what insights leadership needs, and what would make the switch successful.
+
+Interview rules:
+- Ask one question at a time.
+- Follow up when answers are vague.
+- Ask for concrete examples from Buildertrend, JobTread, current projects, handoffs, leads, estimates, permits, client communication, and project updates.
+- Distinguish migration problems, training problems, workflow problems, trust problems, and AI opportunities.
+- Do not propose automation first. Look first for insight, training, templates, documentation, and human-reviewed workflows.
+- Every 5 to 7 questions, summarize what you have learned and ask if it is accurate.
+
+Start with this question:
+"What would make the Buildertrend to JobTread transition successful enough that Schaff feels the new system is worth the effort?"
+
+When you have enough information, or when I say "done," output a section titled "Custom Package Brief for Travis — Company CRM Transition and Training" covering: executive summary, transition needs, company desired outcomes, training needs by role, workflow/data-trust pain points, ranked safe Claude opportunities, a recommended company package, success criteria, open questions for Travis, and useful quotes.</pre>
+    </div>
+
+    <h2>Why this comes <i>first.</i></h2>
+    <p>I won't put a number on anything until I've read that brief. Pricing a Claude + JobTread engagement before I understand your real workflows would just be guesswork — and it would waste your time and mine. The interview is what turns "we should probably do something with AI" into a specific, bounded first step actually worth paying for.</p>
 
     <div class="note">
       <b>What stays human-controlled</b>
       Estimates, permits, contracts, budgets, client commitments, timelines, and financial decisions — always. No AI agents, no replacing JobTread, no client-facing AI without review.
     </div>
 
-    <h2>What happens <i>after.</i></h2>
-    <p>Anything larger is scoped <strong>only after the diagnostic</strong>, based on what we actually find — never sold up front. If there's a clear case, we plan the next steps together; if there isn't, the two weeks still leave you with a useful map and one pilot.</p>
+    <h2>Where I expect it <i>to land.</i></h2>
+    <p>Once I've seen the brief, my honest expectation is that the first paid step stays small and bounded — likely a <strong>two-week diagnostic in the neighborhood of $1,500 flat</strong>: a written findings report and one recommended low-risk pilot, drawn from a few real workflows (a lead, a project update, a client thread, JobTread entry, current Claude use). But I'll confirm the shape and the number against what the interview shows — not before. Anything larger is scoped only later, on evidence, never sold up front.</p>
 
     <hr />
-    <p><strong>Next step:</strong> if a bounded $1,500 first step makes sense, reply and we'll schedule the two weeks. Happy to walk anyone through the scope first.</p>
-    <p style="margin-top:24px;"><a class="btn" href="mailto:tmasingale@gmail.com?subject=Schaff%20%E2%80%94%20Claude%20%2B%20JobTread%20diagnostic">Start the conversation →</a></p>
+    <p><strong>Next step:</strong> have whoever owns the JobTread switch run the interview above and send me the brief. That's the entire ask right now — once it's in, I'll come back with a specific, bounded first step.</p>
   </main>
 
   <footer class="foot">
     <span>Travis Masingale · Claude + JobTread consulting</span>
     <span class="end">For Schaff</span>
   </footer>
+
+  <script>
+    document.querySelectorAll('.copybtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        var pre=document.getElementById(b.dataset.target);
+        if(!pre||!navigator.clipboard)return;
+        navigator.clipboard.writeText(pre.innerText).then(function(){
+          var prev=b.textContent;b.textContent='Copied ✓';
+          setTimeout(function(){b.textContent=prev;},1600);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
