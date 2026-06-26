@@ -38,6 +38,8 @@
     .lede{max-width:54ch;margin:0;color:var(--soft);font-size:clamp(17px,2vw,21px);line-height:1.45;text-wrap:pretty;}
     h2{font-size:clamp(24px,3vw,32px);font-weight:900;line-height:1.04;letter-spacing:-.02em;margin:56px 0 0;}
     h2 i{font-weight:400;}
+    h3{font-size:16px;font-weight:800;letter-spacing:-.005em;margin:30px 0 0;}
+    h3 + ul{margin-top:10px;}
     p,li{font-size:16px;line-height:1.62;color:var(--ink);max-width:62ch;text-wrap:pretty;}
     p{margin:16px 0 0;}
     ul{padding-left:20px;margin:16px 0 0;}
@@ -47,16 +49,10 @@
     .rate{display:flex;align-items:baseline;gap:14px;margin-top:34px;padding-top:24px;border-top:1px solid var(--rule);}
     .rate .num{font-size:44px;font-weight:900;letter-spacing:-.03em;line-height:1;}
     .rate .unit{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--soft);text-transform:uppercase;}
-    .btn{display:inline-flex;min-height:44px;align-items:center;gap:8px;padding:0 18px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;cursor:pointer;}
-    .btn:hover{background:transparent;color:var(--ink);}
     .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:32px;margin-top:64px;border-top:3px solid var(--ink);color:var(--soft);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;}
     .foot .end{color:var(--ink);font-weight:900;}
     @media (max-width:600px){.foot{flex-direction:column;}}
-    .prompt{margin-top:20px;border:1px solid var(--rule);background:var(--paper);}
-    .prompthead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--soft);}
-    .prompt pre{margin:0;padding:18px 16px;font-family:var(--mono);font-size:12.5px;line-height:1.62;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);max-width:none;}
-    .copybtn{min-height:32px;padding:0 12px;font-size:11px;}
-    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}.copybtn{display:none;}.prompt{break-inside:avoid;border-color:#000;}}
+    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}}
   </style>
 </head>
 <body>
@@ -68,81 +64,55 @@
   <main class="wrap">
     <span class="eyebrow">Proposal · Individual tutoring</span>
     <h1>Practical Claude tutoring, <i>built around your real work.</i></h1>
-    <p class="lede">A simple, hourly way to get more out of Claude for everyday Schaff work — without making your workflow more complicated.</p>
+    <p class="lede">Hands-on, hourly sessions to get more out of your preferred Applied AI tool for everyday work — porting what already works in your ChatGPT setup, and going deeper where Claude can do more.</p>
 
     <div class="rate">
       <span class="num">$175<span class="unit"> / hour</span></span>
     </div>
-    <p>Pay as you go — no package, no commitment. Book a session when it's useful; today counts as session one.</p>
+    <p>Pay as you go — no package, no commitment. Book a session when it's useful. We're currently set to meet <strong>weekly, starting Wednesday, July 22 · 10:00–11:00 AM</strong>.</p>
+    <p>Text or give me a call if you ever need to reschedule.</p>
 
     <h2>What we'll <i>work on.</i></h2>
-    <p>Real tasks, not made-up examples — each session leaves you with one or two things Claude saves you time on:</p>
+    <p>We start with what's already on your plate and build from there. A session might cover:</p>
+
+    <h3>Your everyday Schaff work</h3>
     <ul>
-      <li>Turn messy notes into clean, reviewable project updates</li>
-      <li>Draft client follow-ups that don't overpromise</li>
-      <li>Build missing-information checklists so nothing slips</li>
-      <li>Prepare JobTread-ready updates for your review</li>
+      <li>Transferring your current ChatGPT workflows to Claude</li>
+      <li>Exporting all your ChatGPT chats into Claude</li>
+      <li>Understanding Claude's capabilities and limitations</li>
+      <li>Figuring out how to integrate with the new CRM</li>
+    </ul>
+
+    <h3>Getting more out of the tool</h3>
+    <ul>
+      <li>Working with files on your computer through Claude Cowork</li>
+      <li>Connecting Claude to JobTread and the rest of your stack</li>
+      <li>Understanding how Claude actually works — context windows, and how to get cleaner results out of it</li>
+    </ul>
+
+    <h3>Scaling it up</h3>
+    <ul>
+      <li>Running bigger jobs: chunking and batching large sets of files at once instead of one at a time</li>
+      <li>Setting work to run on a schedule — including overnight, while you sleep</li>
+      <li>Eventually, building small custom tools with Claude Code</li>
     </ul>
 
     <h2>How it <i>works.</i></h2>
+    <p>You already know AI — this isn't a beginner course. After two years in ChatGPT, the goal is to move your workflow into Claude and make it work better: connectors, MCPs, Cowork, and Claude Code.</p>
     <ul>
-      <li><strong>$175/hour</strong>, billed per session — book weekly, biweekly, or as things come up</li>
-      <li>~60-minute hands-on sessions, plus a short recap and one practice step after each</li>
+      <li><strong>$175/hour</strong>, billed per session</li>
+      <li>~60-minute hands-on sessions, plus a short recap and one practice step after each — less theory, more homework, then we review what worked and fix whatever broke</li>
       <li>Claude drafts and organizes; <strong>you stay in control</strong> — estimates, permits, budgets, contracts, and client commitments stay with you</li>
     </ul>
 
     <hr />
     <h2>Next <i>step.</i></h2>
-    <p>We're set for a <strong>standing weekly session — Wednesdays at 10:00 AM</strong>, starting <strong>Wednesday, July 22</strong>. Same time each week; calendar invite to follow. Nothing to reply to — we'll meet then and shape each session around whatever's on your plate that week.</p>
-
-    <h2>Tailor it to your work <i>(optional).</i></h2>
-    <p>Want our sessions built around your exact work before we start? It takes about five minutes: paste the prompt below into Claude and answer naturally. When it finishes, it'll produce a <strong>"Custom Package Brief for Travis"</strong> — send that back to me and I'll shape our sessions around it.</p>
-    <div class="prompt">
-      <div class="prompthead"><span>Paste into Claude</span><button class="btn copybtn" type="button" data-target="promptA">Copy</button></div>
-      <pre id="promptA">You are interviewing me so Travis can design my individual Claude tutoring package.
-
-Context:
-I am Ryan at Schaff. I want individual help learning how to use Claude Desktop and Cowork in practical ways. This is separate from the company's broader Buildertrend to JobTread CRM transition.
-
-Travis's lane:
-Travis can help with Claude tutoring, Cowork setup, prompt design, workflow habits, practice exercises, and turning real work into repeatable Claude-supported routines. He is not here to make construction decisions for me.
-
-Important boundaries:
-Claude should support my judgment, not replace it. Estimates, permits, contracts, budgets, client commitments, financial decisions, and construction decisions stay under human review.
-
-Your job:
-Interview me one question at a time to understand what I actually want from individual tutoring. Do not stay topical. If I say "learn Claude," ask what I want Claude to help me do in a real workday. If I say "save time," ask where the time is currently going. If I say "Cowork," ask what recurring outcome would make Cowork worth using.
-
-Interview rules:
-- Ask one question at a time.
-- Follow up when my answer is vague.
-- Ask for real examples from recent work.
-- Separate tool confidence from business outcomes.
-- Every 5 to 7 questions, summarize what you think you have learned and ask if it is right.
-
-Start with this question:
-"If these individual Claude tutoring sessions were genuinely successful, what would you be able to do afterward that you cannot comfortably do now?"
-
-When you have enough information, or when I say "done," output a section titled "Custom Package Brief for Travis — Ryan Individual Tutoring" covering: executive summary, desired outcomes, confidence/skill gaps, best first tutoring topics, useful workflows to build, a recommended tutoring plan, success criteria, and useful quotes.</pre>
-    </div>
+    <p>We meet weekly, starting July 22 — the standing session is already on the calendar, so there's nothing to book. If you ever need to move or pause a week, just let me know.</p>
   </main>
 
   <footer class="foot">
     <span>Travis Masingale · Claude workflow coaching</span>
     <span class="end">For Ryan · Schaff</span>
   </footer>
-
-  <script>
-    document.querySelectorAll('.copybtn').forEach(function(b){
-      b.addEventListener('click',function(){
-        var pre=document.getElementById(b.dataset.target);
-        if(!pre||!navigator.clipboard)return;
-        navigator.clipboard.writeText(pre.innerText).then(function(){
-          var prev=b.textContent;b.textContent='Copied ✓';
-          setTimeout(function(){b.textContent=prev;},1600);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
