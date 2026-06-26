@@ -69,38 +69,85 @@
 
   <main class="wrap">
     <span class="eyebrow">Proposal · Company engagement</span>
-    <h1>Start with the work, <i>not a quote.</i></h1>
-    <p class="lede">Before anyone talks price, I want to understand how Schaff actually works — through one short interview you run yourselves. Everything else follows from what it turns up.</p>
+    <h1>Let's start here — <i>an investigation.</i></h1>
+    <p class="lede">Before we talk about price, I need to understand how Schaff actually works — through one short interview you run yourselves. Everything else follows from what it turns up.</p>
 
-    <p>My role isn't to tell Schaff how to run construction. It's to help the team use Claude and JobTread more consistently and safely. JobTread stays the source of truth; Claude just drafts, summarizes, checks, and organizes. Estimates, permits, contracts, budgets, and client commitments stay with your people.</p>
+    <p>My role is to help your team use Claude and figure out how to integrate it into JobTread — consistently and safely. JobTread stays the source of truth; Claude just drafts, summarizes, checks, and organizes. Estimates, permits, contracts, budgets, and client commitments stay with your people.</p>
 
     <h2>Step one — the <i>interview.</i></h2>
-    <p>This first step costs nothing and commits to nothing. Whoever owns the Buildertrend → JobTread transition — Jessica is the natural fit — pastes the prompt below into Claude and answers naturally. It takes about ten minutes and ends by producing a <strong>"Custom Package Brief for Travis."</strong> Send that brief back to me and we're underway.</p>
+    <p>This first step costs nothing but your time and commits to nothing. Whoever owns the Buildertrend → JobTread transition pastes the prompt below into Claude and answers naturally — it takes about ten to fifteen minutes and ends by producing a <strong>"Custom Package Brief for Travis."</strong> Send that brief back to me and we're underway.</p>
     <div class="prompt">
       <div class="prompthead"><span>Paste into Claude</span><button class="btn copybtn" type="button" data-target="promptB">Copy</button></div>
-      <pre id="promptB">You are interviewing me so Travis can design a company-level support package for Schaff.
+      <pre id="promptB">You are interviewing me so Travis can design a company-level support package for Schaff. Your job in this conversation is DISCOVERY, not selling. By the end you'll write a brief that helps Travis scope a bounded, high-value engagement — and, just as importantly, helps him avoid spending Schaff's time and money on things we don't actually need.
 
-Context:
-Schaff is switching from Buildertrend to JobTread CRM. The company needs insight, training, workflow support, and help making the CRM transition useful and trusted. This is separate from Ryan's individual Claude tutoring.
+WHO I AM
+I'm Jessica at Schaff. I'm an advanced user, and I effectively own our move from Buildertrend to JobTread. I can answer detailed questions about our data, our tools, and how the team really works. Ryan is our owner/operator; he's getting separate one-on-one Claude tutoring, so this interview is about the COMPANY, not his personal track. Keep one hard reality in mind the whole time: roughly two of us (Ryan and me) are doing about six people's jobs. We're stretched thin, trust in our systems and data is low, and learning a new CRM on top of everything else is heavy. Talk to me like a busy person who runs a construction company, not like a software vendor.
 
-Travis's lane:
-Travis is not a construction management expert. He can help with workflow discovery, training design, AI-supported onboarding, prompt/template systems, documentation, adoption support, and safe ways to use Claude around JobTread. He should not make construction, estimating, legal, budget, permit, or financial decisions.
+WHO TRAVIS IS (his lane — keep him inside it)
+Travis helps teams use Claude well and connect it safely to the tools they already use. He's good at: figuring out where work bogs down, designing training and onboarding, building prompt and template systems, writing documentation, helping a team actually adopt new habits, connecting Claude to our tools (for example pulling our JobTread data into Claude), helping us move from ChatGPT to Claude, and building small, human-reviewed Claude helpers. He is NOT a construction, estimating, legal, permit, budget, or financial expert, and he must never make those calls. Estimates, bids, permits, contracts, budgets, client commitments, schedules, and any construction or money decision stay with Schaff's people, and none of them get automated away. When I describe those workflows, your job is to OBSERVE where time and trust are lost — never to decide or recommend a construction call. If I raise something outside Travis's lane, note it and gently flag it.
 
-Your job:
-Interview me one question at a time to uncover what the company actually needs from Travis. Do not just ask "what training do you need?" Dig into the Buildertrend to JobTread transition, where data and trust are breaking down, what people need to learn, what insights leadership needs, and what would make the switch successful.
+YOUR GOAL
+Find out what Schaff actually wants and needs — the real outcomes, the real pain, the real lost time — so Travis can do work that pays off. Push past surface "JobTread stuff." I'll be tempted to answer in terms of CRM features and buttons; keep pulling me back to: what are we really trying to accomplish, where are we bleeding time, money, trust, or sanity, and where would Travis's help be worth it versus a waste.
 
-Interview rules:
-- Ask one question at a time.
-- Follow up when answers are vague.
-- Ask for concrete examples from Buildertrend, JobTread, current projects, handoffs, leads, estimates, permits, client communication, and project updates.
-- Distinguish migration problems, training problems, workflow problems, trust problems, and AI opportunities.
-- Do not propose automation first. Look first for insight, training, templates, documentation, and human-reviewed workflows.
-- Every 5 to 7 questions, summarize what you have learned and ask if it is accurate.
+HOW TO INTERVIEW ME
+- Ask ONE question at a time. Wait for my answer before the next one. Never stack two questions into one.
+- Use plain, warm, everyday language. No jargon. Translate any technical or business term into normal words before you ask it — say "what only one of you knows how to do" instead of "single point of failure," or "connect JobTread to Claude so it can pull your data" instead of "via the API."
+- Aim for about a 10-to-15-minute conversation. If I'm engaged and giving good material, keep following the thread — but before you run much past 15 minutes, check that I want to keep going. Ease off if I'm clearly tapped out.
+- Every 5 to 7 questions, pause, summarize what you've learned in a few plain sentences, and ask "Is that accurate?" Correct course based on my answer.
+- If I say "I don't know," or it's something I wouldn't be the one to decide, don't push. Note it as a question for Travis or for Ryan and move to the next thread.
+- Ryan is on a separate track, so anything about what HE needs is my outside read, not his own words. Capture it as "Jessica's view," and put anything I'm unsure about into the open-questions list to confirm with Ryan directly.
 
-Start with this question:
-"What would make the Buildertrend to JobTread transition successful enough that Schaff feels the new system is worth the effort?"
+GO DEEPER THAN MY FIRST ANSWER — THIS IS THE MOST IMPORTANT INSTRUCTION
+My first answers will often be vague or generic. Don't accept them and move on.
+- When I give a general answer ("we just need better training," "the data's a mess," "it'd be nice to be more organized"), slow down: training for whom, on what, to fix what? Whose data, breaking how, costing us what? Ask what it actually looks like on a normal Tuesday.
+- Ask "why does that matter?" and "what happens when that goes wrong?" and "who feels that, and how often?"
+- Always ask for a recent, concrete example: "Walk me through the last time that happened." Push for the specific lead, estimate, permit, client message, project update, report, or handoff — not the general pattern. Stories beat summaries.
+- Separate what I SAY I want from the underlying problem. If I ask for a feature or a tool, ask what would be true if it worked and what pain would disappear. Chase the real need, not the named solution.
+- Quantify the pain when you can: how often, how many hours, how much rework, what it costs when it goes wrong, what it blocks.
+- Surface needs I haven't named. If you sense an unspoken problem — overload, distrust, a quiet workaround we've built, change fatigue — gently name it and ask if it's true.
+- Don't let us sink into "JobTread settings and buttons." Every time we get stuck on software mechanics, pull us back up to outcomes.
+- Quietly sort what you hear into buckets so the brief stays clean: migration problems, training problems, workflow problems, trust/adoption problems, data-protection concerns, and genuine AI opportunities. They're different and need different fixes — don't blur them.
+- Do NOT lead with automation. Look first for insight, training, templates, documentation, and human-reviewed workflows. Only raise an AI helper or a tool connection once MY pain points to it, and frame it as something for Travis to weigh, not a promise.
 
-When you have enough information, or when I say "done," output a section titled "Custom Package Brief for Travis — Company CRM Transition and Training" covering: executive summary, transition needs, company desired outcomes, training needs by role, workflow/data-trust pain points, ranked safe Claude opportunities, a recommended company package, success criteria, open questions for Travis, and useful quotes.</pre>
+WHAT TO UNCOVER (weave in naturally — these are themes, not a script)
+- The real goal and value: what would make this whole switch genuinely worth the effort and cost, what a good year looks like, what we hope to stop doing, start doing, or do faster.
+- The overload reality: who does what, who actually decides, where "two people doing six jobs" bites hardest, what only one of us knows how to do, and how Ryan and I differ — treat us as two people with two different sets of pain.
+- Trust and adoption: how much we trust our current data and why, how much we trust AI output and what's made us skeptical, what would have to be TRUE to trust the new CRM and trust Claude-assisted work, and why past tools or rollouts didn't stick.
+- The Buildertrend-to-JobTread switch: where we are now, what lives in the CRM today, how it gets entered and by whom, how clean it is, what's migrating, what's being left behind, and what's breaking.
+- The work itself (observe, never decide): leads, estimates, permits, client communication, project updates, and handoffs between people — where time leaks and errors creep in.
+- Training people AND "training the system": what the team needs to learn, what the system itself needs set up (templates, fields, processes) so it reflects how we work, and how new people get onboarded.
+- What already works, plus data and tools: current tools, how we use ChatGPT and any Claude today, what's working that we should protect; and what's sensitive (client info, financials, contracts, employee data) and must stay private versus what's safe to put in front of an AI.
+- The shape of the help: our appetite for a phased roughly six-month effort, whether weekly or every-other-week working sessions fit, and — bluntly — where Travis can do high-value work versus where he should NOT spend our time or money.
+
+IF WE'RE SHORT ON TIME
+Make sure you've at least touched these before we stop, in this order: (1) what success really looks like and the value behind the switch; (2) the overload reality and how Ryan and I each work and hurt differently; (3) trust in the system, the data, and AI; (4) the single worst workflow pain, with one concrete recent example. Treat the rest — exact migration details, data-protection specifics, tool connections, specific AI helper ideas, and cadence — as good-to-have. Anything we don't reach goes into the brief's open-questions section; don't guess to fill a gap.
+
+START WITH THIS QUESTION (ask it by itself, and nothing else):
+"Forget the software for a second — if six months from now this switch clearly felt worth it, what would be different about a normal day for you?"
+(Once I've answered that, ask separately, as a follow-up, what would be different about Ryan's day.)
+
+WHEN WE'RE DONE
+When you have enough to write a useful brief, or when I say "done," stop interviewing and write the brief below. Write it for Travis in clear, plain language, grounded in the specific examples I gave you. Where something is uncertain or we didn't get to it, say so plainly rather than guessing.
+
+Title it exactly: Custom Package Brief for Travis — Company CRM Transition and Training
+
+Sections:
+1. Executive summary — the real situation in a few honest sentences, including the staffing reality.
+2. What success looks like, and how we'd know — the real outcomes and value we're after, plus the concrete signs the engagement is paying off.
+3. Org and staffing reality — who does what, who decides, and where the "two people doing six jobs" overload is worst; what Jessica needs and, separately, what Ryan needs (marked as Jessica's outside view, with anything unconfirmed flagged for Ryan).
+4. Current tools and AI use — what we use today, what's working and must be preserved, and our current ChatGPT and Claude usage.
+5. CRM and data state and migration — what's in Buildertrend and JobTread, how data is entered and by whom, data quality and trust, what's migrating, and what's breaking.
+6. Trust and adoption — where trust in the system, the data, and AI is low, what would have to be true to earn it, change fatigue and past rollout history, and why this is a core risk.
+7. Domain workflow pain (observed, not decided) — leads, estimates, permits, client communication, project updates, handoffs: where time and accuracy are lost.
+8. Training and onboarding needs — training people and "training the system," plus onboarding new people to the new CRM.
+9. Data-protection needs — what's sensitive, what stays private, what's safe to use with Claude.
+10. Ranked safe Claude and AI opportunities — ordered by value and safety, each tied to a specific pain I described, each marked human-reviewed. Include a sub-list of tool-connection opportunities (pulling JobTread data into Claude, connecting Claude to our other tools, moving from ChatGPT to Claude) with the payoff for each and any that aren't worth it. List candidate assistants ONLY where my own answers motivated them, each with the exact pain quote that justifies it. For common ideas my answers did NOT support (for example an onboarding assistant, a helper that answers recurring role/position questions, or personal assistants for Ryan or for Jessica), if nothing pointed to them, list them under "considered but not indicated yet — no pain pointed here," not as recommendations.
+11. Recommended phased package — a possible roughly six-month arc, phase by phase with what each delivers, and a suggested cadence (weekly vs every other week) scoped to our capacity.
+12. Where Travis should NOT spend our time or money — explicit out-of-scope, premature, or low-value areas, including anything that belongs to humans (estimates, permits, contracts, budgets, client commitments, schedules, construction and financial decisions).
+13. Open questions for Travis — what still needs clarifying before he scopes, including anything I didn't know and anything to confirm with Ryan directly.
+14. Useful quotes — a handful of my exact words, verbatim, that capture the real needs, frustrations, and goals.
+
+Keep the whole brief honest, specific, and inside Travis's lane, with humans in control of every estimate, permit, contract, budget, client commitment, timeline, and financial or construction decision. Begin now with the single starting question, and nothing else.</pre>
     </div>
 
     <h2>Why this comes <i>first.</i></h2>
@@ -115,7 +162,7 @@ When you have enough information, or when I say "done," output a section titled 
     <p>Once I've seen the brief, my honest expectation is that the first paid step stays small and bounded — likely a <strong>two-week diagnostic in the neighborhood of $1,500 flat</strong>: a written findings report and one recommended low-risk pilot, drawn from a few real workflows (a lead, a project update, a client thread, JobTread entry, current Claude use). But I'll confirm the shape and the number against what the interview shows — not before. Anything larger is scoped only later, on evidence, never sold up front.</p>
 
     <hr />
-    <p><strong>Next step:</strong> have whoever owns the JobTread switch run the interview above and send me the brief. That's the entire ask right now — once it's in, I'll come back with a specific, bounded first step.</p>
+    <p><strong>Next step:</strong> have Jessica run the interview above and send me the brief. That's the entire ask right now — once it's in, I'll come back with a specific, bounded first step.</p>
   </main>
 
   <footer class="foot">

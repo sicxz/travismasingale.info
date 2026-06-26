@@ -52,7 +52,13 @@
     .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:32px;margin-top:64px;border-top:3px solid var(--ink);color:var(--soft);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;}
     .foot .end{color:var(--ink);font-weight:900;}
     @media (max-width:600px){.foot{flex-direction:column;}}
-    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}}
+    .btn{display:inline-flex;min-height:44px;align-items:center;gap:8px;padding:0 18px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;cursor:pointer;}
+    .btn:hover{background:transparent;color:var(--ink);}
+    .prompt{margin-top:20px;border:1px solid var(--rule);background:var(--paper);}
+    .prompthead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--soft);}
+    .prompt pre{margin:0;padding:18px 16px;font-family:var(--mono);font-size:12.5px;line-height:1.62;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);max-width:none;}
+    .copybtn{min-height:32px;padding:0 12px;font-size:11px;}
+    @media print{.top{position:static;}body{background:#fff;color:#000;}a{color:#000;}.copybtn{display:none;}.prompt{break-inside:avoid;border-color:#000;}}
   </style>
 </head>
 <body>
@@ -73,7 +79,7 @@
     <p>Text or give me a call if you ever need to reschedule.</p>
 
     <h2>What we'll <i>work on.</i></h2>
-    <p>We start with what's already on your plate and build from there. A session might cover:</p>
+    <p>We start with what's already on your plate and build from there. This is what I'm thinking for now — once you run the short interview below, I'll have a much better idea of what we should focus on. A session might cover:</p>
 
     <h3>Your everyday Schaff work</h3>
     <ul>
@@ -105,6 +111,37 @@
       <li>Claude drafts and organizes; <strong>you stay in control</strong> — estimates, permits, budgets, contracts, and client commitments stay with you</li>
     </ul>
 
+    <h2>Tailor your sessions <i>(optional).</i></h2>
+    <p>I told you I'd send this over — here it is. Paste it into Claude and answer naturally; it takes about five minutes and ends with a <strong>"Custom Package Brief for Travis."</strong> Send that back to me and I'll build our sessions around your real work. Until then, the plan above is my best guess.</p>
+    <div class="prompt">
+      <div class="prompthead"><span>Paste into Claude</span><button class="btn copybtn" type="button" data-target="promptA">Copy</button></div>
+      <pre id="promptA">You are interviewing me so Travis can design my individual Claude tutoring package.
+
+Context:
+I am Ryan at Schaff. I want individual help learning how to use Claude Desktop and Cowork in practical ways. This is separate from the company's broader Buildertrend to JobTread CRM transition.
+
+Travis's lane:
+Travis can help with Claude tutoring, Cowork setup, prompt design, workflow habits, practice exercises, and turning real work into repeatable Claude-supported routines. He is not here to make construction decisions for me.
+
+Important boundaries:
+Claude should support my judgment, not replace it. Estimates, permits, contracts, budgets, client commitments, financial decisions, and construction decisions stay under human review.
+
+Your job:
+Interview me one question at a time to understand what I actually want from individual tutoring. Do not stay topical. If I say "learn Claude," ask what I want Claude to help me do in a real workday. If I say "save time," ask where the time is currently going. If I say "Cowork," ask what recurring outcome would make Cowork worth using.
+
+Interview rules:
+- Ask one question at a time.
+- Follow up when my answer is vague.
+- Ask for real examples from recent work.
+- Separate tool confidence from business outcomes.
+- Every 5 to 7 questions, summarize what you think you have learned and ask if it is right.
+
+Start with this question:
+"If these individual Claude tutoring sessions were genuinely successful, what would you be able to do afterward that you cannot comfortably do now?"
+
+When you have enough information, or when I say "done," output a section titled "Custom Package Brief for Travis — Ryan Individual Tutoring" covering: executive summary, desired outcomes, confidence/skill gaps, best first tutoring topics, useful workflows to build, a recommended tutoring plan, success criteria, and useful quotes.</pre>
+    </div>
+
     <hr />
     <h2>Next <i>step.</i></h2>
     <p>We meet weekly, starting July 22 — the standing session is already on the calendar, so there's nothing to book. If you ever need to move or pause a week, just let me know.</p>
@@ -114,5 +151,18 @@
     <span>Travis Masingale · Claude workflow coaching</span>
     <span class="end">For Ryan · Schaff</span>
   </footer>
+
+  <script>
+    document.querySelectorAll('.copybtn').forEach(function(b){
+      b.addEventListener('click',function(){
+        var pre=document.getElementById(b.dataset.target);
+        if(!pre||!navigator.clipboard)return;
+        navigator.clipboard.writeText(pre.innerText).then(function(){
+          var prev=b.textContent;b.textContent='Copied ✓';
+          setTimeout(function(){b.textContent=prev;},1600);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
